@@ -22,26 +22,48 @@ var str = ms.success('good green');
 var str = ms.warning('annoying yellow');
 var str = ms.error('bad red');
 
-// combine to write stylized output
+// usage
 console.log('this is ' + ms.success('very amaze'));
 ````
 
 Bundled implementations:
 ````js
+// return as-is
 var ms = ministyle.plain();
+// ansi terminal codes
 var ms = ministyle.ansi();
+// spans with default colors
 var ms = ministyle.html();
+// spans with css class
 var ms = ministyle.css();
-var ms = ministyle.colorjs(); //same as grunt v0.4.x
+// colors.js getters, same as grunt v0.4.x
+var ms = ministyle.colorjs();
+
+// blank chars
+var ms = ministyle.empty();
+
+// dev style wraps with [style:names])
 var ms = ministyle.dev();
+````
+
+Proxy other styles:
+````
+// toggle to alternative (alt defaults to empty)
+var ms = ministyle.proxy(wrapped, alt?);
+ms.main = otherStyleA;
+ms.swap();
+ms.enabled = false;
+// hacky
+ms.active = otherStyleC;
+ms.alt = otherStyleB;
 ````
 
 ## Examples
 
 Make it bigger:
 ````js
-var mw = ministyle.plain();
-ms.fail = ms.success = function(str) {
+var ms = ministyle.plain();
+ms.error = ms.success = function(str) {
 	return str.toUpperCase()
 };
 ````
