@@ -27,17 +27,24 @@ console.log('this is ' + ms.success('very amaze'));
 ````
 
 Bundled implementations:
+
 ````js
+// default
+var ms = ministyle.base();
 // return as-is
 var ms = ministyle.plain();
 // ansi terminal codes
 var ms = ministyle.ansi();
-// spans with default colors
+
+// html spans with default colors
 var ms = ministyle.html();
-// spans with css class
+// html spans with css class
 var ms = ministyle.css();
-// colors.js getters, same as grunt v0.4.x
+
+// colors.js getters
 var ms = ministyle.colorjs();
+// grunt v0.4.x
+var ms = ministyle.grunt();
 
 // blank chars
 var ms = ministyle.empty();
@@ -46,29 +53,41 @@ var ms = ministyle.empty();
 var ms = ministyle.dev();
 ````
 
-Proxy other styles:
+### Advanced sub types
+
+Apply each style in-order
+````js
+// standard methods will pass the value though each sub-style and return the result
+var ms = ministyle.stack(styles);
+ms.enabled = true;
+ms.stack = [];
 ````
-// toggle to alternative (alt defaults to empty)
-var ms = ministyle.proxy(wrapped, alt?);
-ms.main = otherStyleA;
-ms.swap();
-ms.enabled = false;
-// hacky
-ms.active = otherStyleC;
+
+Peek and update string:
+````js
+// standard methods pass value through callback
+var ms = ministyle.peek(callback, main, alt?);
+ms.enabled = true;
+ms.callback = function(str, type, main, alt); //return new string, or false to send input to alt
+ms.target = otherStyleA;
 ms.alt = otherStyleB;
 ````
 
-## Examples
-
-Make it bigger:
+Toggle to alternative:
 ````js
-var ms = ministyle.plain();
-ms.error = ms.success = function(str) {
-	return str.toUpperCase()
-};
+// standard methods will use main if enabled, otherwise alt
+var ms = ministyle.toggle(main, alt?);
+ms.main = otherStyleA;
+ms.alt = otherStyleB;
+ms.enabled = true;
+ms.toggle();
+// hacky
+ms.active = otherStyleC; 
 ````
 
-Build your own:
+
+### Build your own
+
 ````js
 var obj = {
 	plain: function (str) {
@@ -92,6 +111,21 @@ var obj = {
 };
 ````
 
+### Examples
+
+Make it bigger:
+````js
+var ms = ministyle.plain();
+ms.error = ms.success = function(str) {
+	return str.toUpperCase();
+};
+````
+
+Safe html:
+````js
+var ms = ministyle.peek(ministyle.escapeHTML, ministyle.css());
+````
+
 ## Installation
 
 Not yet published to package managers. 
@@ -102,9 +136,13 @@ Link to a github commit if you feel adventurous.
 $ npm install ministyle --save-dev
 ```
 
+## Future
+
+1. Code/style generator to replicate style-type logic (needs to be efficient though).
+
 ## History
 
-* 0.0.1 - Extracted styling from [ministyle](https://github.com/Bartvds/ministyle).
+* 0.0.1 - Extracted styling from [miniwrite](https://github.com/Bartvds/miniwrite).
 
 ## Build
 

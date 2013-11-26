@@ -1,7 +1,7 @@
 {
   "name": "ministyle",
   "description": "Minimal semantic output styler",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "homepage": "https://github.com/Bartvds/ministyle",
   "author": {
     "name": "Bart van der Schoor",
