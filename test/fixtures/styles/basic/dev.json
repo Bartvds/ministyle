@@ -1,0 +1,46 @@
+{
+	"dev": {
+		"accent": {
+			"array": "[accent|1,2,3]",
+			"empty": "[accent|]",
+			"null": "[accent|null]",
+			"sentence": "[accent|one, two, three]",
+			"word": "[accent|alpha]"
+		},
+		"error": {
+			"array": "[error|1,2,3]",
+			"empty": "[error|]",
+			"null": "[error|null]",
+			"sentence": "[error|one, two, three]",
+			"word": "[error|alpha]"
+		},
+		"muted": {
+			"array": "[muted|1,2,3]",
+			"empty": "[muted|]",
+			"null": "[muted|null]",
+			"sentence": "[muted|one, two, three]",
+			"word": "[muted|alpha]"
+		},
+		"plain": {
+			"array": "[plain|1,2,3]",
+			"empty": "[plain|]",
+			"null": "[plain|null]",
+			"sentence": "[plain|one, two, three]",
+			"word": "[plain|alpha]"
+		},
+		"success": {
+			"array": "[success|1,2,3]",
+			"empty": "[success|]",
+			"null": "[success|null]",
+			"sentence": "[success|one, two, three]",
+			"word": "[success|alpha]"
+		},
+		"warning": {
+			"array": "[warning|1,2,3]",
+			"empty": "[warning|]",
+			"null": "[warning|null]",
+			"sentence": "[warning|one, two, three]",
+			"word": "[warning|alpha]"
+		}
+	}
+}

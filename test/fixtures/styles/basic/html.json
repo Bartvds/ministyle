@@ -1,0 +1,46 @@
+{
+	"html": {
+		"accent": {
+			"array": "<span style=\"color:cyan\">1,2,3</span>",
+			"empty": "<span style=\"color:cyan\"></span>",
+			"null": "<span style=\"color:cyan\">null</span>",
+			"sentence": "<span style=\"color:cyan\">one, two, three</span>",
+			"word": "<span style=\"color:cyan\">alpha</span>"
+		},
+		"error": {
+			"array": "<span style=\"color:red\">1,2,3</span>",
+			"empty": "<span style=\"color:red\"></span>",
+			"null": "<span style=\"color:red\">null</span>",
+			"sentence": "<span style=\"color:red\">one, two, three</span>",
+			"word": "<span style=\"color:red\">alpha</span>"
+		},
+		"muted": {
+			"array": "<span style=\"color:grey\">1,2,3</span>",
+			"empty": "<span style=\"color:grey\"></span>",
+			"null": "<span style=\"color:grey\">null</span>",
+			"sentence": "<span style=\"color:grey\">one, two, three</span>",
+			"word": "<span style=\"color:grey\">alpha</span>"
+		},
+		"plain": {
+			"array": "<span style=\"color:black\">1,2,3</span>",
+			"empty": "<span style=\"color:black\"></span>",
+			"null": "<span style=\"color:black\">null</span>",
+			"sentence": "<span style=\"color:black\">one, two, three</span>",
+			"word": "<span style=\"color:black\">alpha</span>"
+		},
+		"success": {
+			"array": "<span style=\"color:green\">1,2,3</span>",
+			"empty": "<span style=\"color:green\"></span>",
+			"null": "<span style=\"color:green\">null</span>",
+			"sentence": "<span style=\"color:green\">one, two, three</span>",
+			"word": "<span style=\"color:green\">alpha</span>"
+		},
+		"warning": {
+			"array": "<span style=\"color:yellow\">1,2,3</span>",
+			"empty": "<span style=\"color:yellow\"></span>",
+			"null": "<span style=\"color:yellow\">null</span>",
+			"sentence": "<span style=\"color:yellow\">one, two, three</span>",
+			"word": "<span style=\"color:yellow\">alpha</span>"
+		}
+	}
+}

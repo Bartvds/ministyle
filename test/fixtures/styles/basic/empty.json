@@ -1,0 +1,46 @@
+{
+	"empty": {
+		"accent": {
+			"array": "     ",
+			"empty": "",
+			"null": "    ",
+			"sentence": "               ",
+			"word": "     "
+		},
+		"error": {
+			"array": "     ",
+			"empty": "",
+			"null": "    ",
+			"sentence": "               ",
+			"word": "     "
+		},
+		"muted": {
+			"array": "     ",
+			"empty": "",
+			"null": "    ",
+			"sentence": "               ",
+			"word": "     "
+		},
+		"plain": {
+			"array": "     ",
+			"empty": "",
+			"null": "    ",
+			"sentence": "               ",
+			"word": "     "
+		},
+		"success": {
+			"array": "     ",
+			"empty": "",
+			"null": "    ",
+			"sentence": "               ",
+			"word": "     "
+		},
+		"warning": {
+			"array": "     ",
+			"empty": "",
+			"null": "    ",
+			"sentence": "               ",
+			"word": "     "
+		}
+	}
+}

@@ -1,0 +1,46 @@
+{
+	"grunt": {
+		"accent": {
+			"array": "\u001b[36m1,2,3\u001b[39m",
+			"empty": "\u001b[36m\u001b[39m",
+			"null": "\u001b[36mnull\u001b[39m",
+			"sentence": "\u001b[36mone, two, three\u001b[39m",
+			"word": "\u001b[36malpha\u001b[39m"
+		},
+		"error": {
+			"array": "\u001b[31m1,2,3\u001b[39m",
+			"empty": "\u001b[31m\u001b[39m",
+			"null": "\u001b[31mnull\u001b[39m",
+			"sentence": "\u001b[31mone, two, three\u001b[39m",
+			"word": "\u001b[31malpha\u001b[39m"
+		},
+		"muted": {
+			"array": "\u001b[90m1,2,3\u001b[39m",
+			"empty": "\u001b[90m\u001b[39m",
+			"null": "\u001b[90mnull\u001b[39m",
+			"sentence": "\u001b[90mone, two, three\u001b[39m",
+			"word": "\u001b[90malpha\u001b[39m"
+		},
+		"plain": {
+			"array": "1,2,3",
+			"empty": "",
+			"null": "null",
+			"sentence": "one, two, three",
+			"word": "alpha"
+		},
+		"success": {
+			"array": "\u001b[32m1,2,3\u001b[39m",
+			"empty": "\u001b[32m\u001b[39m",
+			"null": "\u001b[32mnull\u001b[39m",
+			"sentence": "\u001b[32mone, two, three\u001b[39m",
+			"word": "\u001b[32malpha\u001b[39m"
+		},
+		"warning": {
+			"array": "\u001b[33m1,2,3\u001b[39m",
+			"empty": "\u001b[33m\u001b[39m",
+			"null": "\u001b[33mnull\u001b[39m",
+			"sentence": "\u001b[33mone, two, three\u001b[39m",
+			"word": "\u001b[33malpha\u001b[39m"
+		}
+	}
+}

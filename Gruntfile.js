@@ -12,18 +12,10 @@ module.exports = function (grunt) {
 	/*jshint unused:false*/
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-mocha-test');
 
 	var util = require('util');
-
-	//used by format checker
-	var dateRegex = /^\d{4}-\d{1,2}-\d{1,2}$/;
-	var dateValidateCallback = function (data, schema) {
-		if (typeof data !== 'string' || !dateRegex.test(data)) {
-			// return error message
-			return 'value must be string of the form: YYYY-MM-DD';
-		}
-		return null;
-	};
 
 	grunt.initConfig({
 		jshint: {
@@ -33,11 +25,26 @@ module.exports = function (grunt) {
 			all: [
 				'Gruntfile.js',
 				'lib/**/*.js',
-				'tasks/**/*.js'
+				'tasks/**/*.js',
+				'test/**/*.js'
 			]
+		},
+		clean: {
+			tmp : ['./tmp/**/*', './test/tmp/**/*']
+		},
+		mochaTest: {
+			options: {
+				reporter: 'mocha-unfunk-reporter'
+			},
+			all: {
+				src: [
+					'./test/spec/*.test.js'
+				]
+			}
 		}
 	});
 
-	grunt.registerTask('test', ['jshint']);
+	grunt.registerTask('prep', ['clean', 'jshint']);
+	grunt.registerTask('test', ['prep', 'mochaTest']);
 	grunt.registerTask('default', ['test']);
 };

@@ -1,0 +1,46 @@
+{
+	"css": {
+		"accent": {
+			"array": "<span class=\"mw-accent\">1,2,3</span>",
+			"empty": "<span class=\"mw-accent\"></span>",
+			"null": "<span class=\"mw-accent\">null</span>",
+			"sentence": "<span class=\"mw-accent\">one, two, three</span>",
+			"word": "<span class=\"mw-accent\">alpha</span>"
+		},
+		"error": {
+			"array": "<span class=\"mw-error\">1,2,3</span>",
+			"empty": "<span class=\"mw-error\"></span>",
+			"null": "<span class=\"mw-error\">null</span>",
+			"sentence": "<span class=\"mw-error\">one, two, three</span>",
+			"word": "<span class=\"mw-error\">alpha</span>"
+		},
+		"muted": {
+			"array": "<span class=\"mw-muted\">1,2,3</span>",
+			"empty": "<span class=\"mw-muted\"></span>",
+			"null": "<span class=\"mw-muted\">null</span>",
+			"sentence": "<span class=\"mw-muted\">one, two, three</span>",
+			"word": "<span class=\"mw-muted\">alpha</span>"
+		},
+		"plain": {
+			"array": "<span class=\"mw-plain\">1,2,3</span>",
+			"empty": "<span class=\"mw-plain\"></span>",
+			"null": "<span class=\"mw-plain\">null</span>",
+			"sentence": "<span class=\"mw-plain\">one, two, three</span>",
+			"word": "<span class=\"mw-plain\">alpha</span>"
+		},
+		"success": {
+			"array": "<span class=\"mw-success\">1,2,3</span>",
+			"empty": "<span class=\"mw-success\"></span>",
+			"null": "<span class=\"mw-success\">null</span>",
+			"sentence": "<span class=\"mw-success\">one, two, three</span>",
+			"word": "<span class=\"mw-success\">alpha</span>"
+		},
+		"warning": {
+			"array": "<span class=\"mw-warning\">1,2,3</span>",
+			"empty": "<span class=\"mw-warning\"></span>",
+			"null": "<span class=\"mw-warning\">null</span>",
+			"sentence": "<span class=\"mw-warning\">one, two, three</span>",
+			"word": "<span class=\"mw-warning\">alpha</span>"
+		}
+	}
+}
