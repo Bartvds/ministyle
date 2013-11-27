@@ -146,13 +146,11 @@ $ npm install ministyle --save-dev
 
 ## Build
 
-Nothing much here as the code is still being hammered out.
-
-~~Install development dependencies in your git checkout:~~
+Install development dependencies in your git checkout:
 
     $ npm install
 
-~~Build and run tests:~~
+Build and run tests:
 
     $ grunt
 

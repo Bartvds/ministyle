@@ -1,6 +1,6 @@
 /*jshint -W098*/
 
-describe('ministyle: styles', function () {
+describe('styles', function () {
 	var helper = require('../helper');
 	var assert = helper.assert;
 
@@ -8,7 +8,7 @@ describe('ministyle: styles', function () {
 
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-	var apiAll = [
+	var styles = [
 		'error',
 		'warning',
 		'success',
@@ -19,22 +19,22 @@ describe('ministyle: styles', function () {
 
 	var apiFixed = {
 		plain: function (str) {
-			return str;
+			return String(str);
 		},
 		success: function (str) {
-			return str;
+			return String(str);
 		},
 		accent: function (str) {
-			return str;
+			return String(str);
 		},
 		warning: function (str) {
-			return str;
+			return String(str);
 		},
 		error: function (str) {
-			return str;
+			return String(str);
 		},
 		muted: function (str) {
-			return str;
+			return String(str);
 		}
 	};
 
@@ -55,19 +55,9 @@ describe('ministyle: styles', function () {
 
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-	describe('assertMiniStyle', function () {
-		it('detects first correctly', function () {
-			assert.throws(function () {
-				ministyle.assertMiniStyle({});
-			});
-		});
-		it('detects all correctly', function () {
-			assert.throws(function () {
-				ministyle.assertMiniStyle(apiBad);
-			});
-		});
-		it('detects some missing correctly', function () {
-			ministyle.assertMiniStyle(apiFixed);
+	describe('bulk', function () {
+		styles.forEach(function (style) {
+
 		});
 	});
 
@@ -148,40 +138,42 @@ describe('ministyle: styles', function () {
 		array: [1, 2, 3]
 	};
 	var caseKeys = Object.keys(cases).sort();
-	var apiKeys = apiAll.slice(0).sort();
+	var apiKeys = styles.slice(0).sort();
 
-	Object.keys(suite).sort().forEach(function (testName) {
-		describe(testName, function () {
-			var test = suite[testName];
+	describe('bulk', function () {
+		Object.keys(suite).sort().forEach(function (testName) {
+			describe(testName, function () {
+				var test = suite[testName];
 
-			//console.log('\n' + testName + '\n');
+				//console.log('\n' + testName + '\n');
 
-			Object.keys(test).sort().forEach(function (variation) {
-				var actual = {};
-				var group = {};
-				var sub;
-				var expected = helper.readJSON('./test/fixtures/styles/' + variation + '/' + testName + '.json');
-				var inst = test[variation]();
+				Object.keys(test).sort().forEach(function (variation) {
+					var actual = {};
+					var group = {};
+					var sub;
+					var expected = helper.readJSON('./test/fixtures/styles/' + variation + '/' + testName + '.json');
+					var inst = test[variation]();
 
-				apiKeys.forEach(function (styleName) {
-					if (group.hasOwnProperty(styleName)) {
-						sub = group[styleName];
-					}
-					else {
-						group[styleName] = sub = {};
-					}
-					caseKeys.forEach(function (caseName) {
-						//console.log(styleName + ' ' + typeof inst[styleName]);
-						//console.log(cases[caseName] + ' ' + typeof inst[styleName](cases[caseName]));
-						sub[caseName] = inst[styleName](cases[caseName]);
+					apiKeys.forEach(function (styleName) {
+						if (group.hasOwnProperty(styleName)) {
+							sub = group[styleName];
+						}
+						else {
+							group[styleName] = sub = {};
+						}
+						caseKeys.forEach(function (caseName) {
+							//console.log(styleName + ' ' + typeof inst[styleName]);
+							//console.log(cases[caseName] + ' ' + typeof inst[styleName](cases[caseName]));
+							sub[caseName] = inst[styleName](cases[caseName]);
+						});
 					});
-				});
-				actual[testName] = group;
+					actual[testName] = group;
 
-				helper.writeJSON('./test/tmp/styles/' + variation + '/' + testName + '.json', actual);
+					helper.writeJSON('./test/tmp/styles/' + variation + '/' + testName + '.json', actual);
 
-				it(variation, function () {
-					assert.deepEqual(actual, expected);
+					it(variation, function () {
+						assert.deepEqual(actual, expected);
+					});
 				});
 			});
 		});

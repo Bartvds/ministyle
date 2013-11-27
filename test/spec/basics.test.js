@@ -1,6 +1,4 @@
-/*jshint -W098*/
-
-describe('ministyle: basics', function () {
+describe('basics', function () {
 	var helper = require('../helper');
 	var assert = helper.assert;
 
