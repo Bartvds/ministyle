@@ -129,10 +129,6 @@ var ms = ministyle.peek(ministyle.escapeHTML, ministyle.css());
 
 ## Installation
 
-Not yet published to package managers. 
-
-Link to a github commit if you feel adventurous.
-
 ```shell
 $ npm install ministyle --save-dev
 ```
@@ -143,6 +139,7 @@ $ npm install ministyle --save-dev
 
 ## History
 
+* 0.1.0 - Added tests, publishing to npm.
 * 0.0.1 - Extracted styling from [miniwrite](https://github.com/Bartvds/miniwrite).
 
 ## Build
