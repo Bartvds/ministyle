@@ -1,6 +1,8 @@
 /*jshint -W098*/
 
 describe('styles', function () {
+	'use strict';
+
 	var helper = require('../helper');
 	var assert = helper.assert;
 
@@ -52,14 +54,6 @@ describe('styles', function () {
 		'success',
 		'accent'
 	];
-
-	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-	describe('bulk', function () {
-		styles.forEach(function (style) {
-
-		});
-	});
 
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

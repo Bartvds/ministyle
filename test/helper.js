@@ -1,3 +1,5 @@
+'use strict';
+
 var chai = require('chai');
 chai.Assertion.includeStack = true;
 var assert = chai.assert;
@@ -8,6 +10,7 @@ function readJSON(src) {
 	if (grunt.file.exists(src)) {
 		return grunt.file.readJSON(src);
 	}
+	console.log('mssing file: ' + src);
 	return {};
 }
 

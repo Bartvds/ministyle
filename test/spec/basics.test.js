@@ -1,4 +1,6 @@
 describe('basics', function () {
+	'use strict';
+
 	var helper = require('../helper');
 	var assert = helper.assert;
 

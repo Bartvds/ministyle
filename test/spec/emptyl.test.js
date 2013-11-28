@@ -1,6 +1,8 @@
 /*jshint -W098*/
 
-describe('specials', function () {
+describe('empty', function () {
+	'use strict';
+
 	var helper = require('../helper');
 	var assert = helper.assert;
 
@@ -43,7 +45,7 @@ describe('specials', function () {
 		assert.strictEqual(test.length, base.length, 'base.length');
 	}
 
-	describe('empty', function () {
+	describe('bulk', function () {
 		var base = ministyle.plain();
 		var empty = ministyle.empty();
 		var inputs = ['a', 'aa', 'aa aa', null, 123, ' a '];

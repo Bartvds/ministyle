@@ -1,21 +1,9 @@
-/*
- * grunt-tv4
- * https://github.com/Bartvds/grunt-tv4
- *
- * Copyright (c) 2013 Bart van der Schoor
- * Licensed under the MIT license.
- */
-
 'use strict';
 
 module.exports = function (grunt) {
-	/*jshint unused:false*/
-
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-mocha-test');
-
-	var util = require('util');
 
 	grunt.initConfig({
 		jshint: {

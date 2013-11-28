@@ -1,47 +1,54 @@
 /*jshint -W098*/
 
 describe('toggle', function () {
+	'use strict';
+
 	var helper = require('../helper');
 	var assert = helper.assert;
 
 	var ministyle = require('../../lib/ministyle');
 	var styles = ministyle.getStyleNames();
 
-	var toggle;
+	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+	var style;
 
 	beforeEach(function () {
-		toggle = ministyle.toggle(ministyle.dev(), ministyle.ansi());
+		style = ministyle.toggle(ministyle.dev(), ministyle.ansi());
+		ministyle.assertMiniStyle(style);
 	});
 
 	after(function () {
-		toggle = null;
+		style = null;
 	});
 
+	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 	it('defaults', function () {
-		assert.isTrue(toggle.enabled, 'enabled');
+		assert.isTrue(style.enabled, 'enabled');
 
-		assert.ok(toggle.main, 'main');
-		assert.ok(toggle.alt, 'alt');
-		assert.ok(toggle.active, 'active');
+		assert.ok(style.main, 'main');
+		assert.ok(style.alt, 'alt');
+		assert.ok(style.active, 'active');
 
-		assert.equal(toggle.main, toggle.active, 'main');
-		assert.notEqual(toggle.alt, toggle.active, 'alt');
+		assert.equal(style.main, style.active, 'main');
+		assert.notEqual(style.alt, style.active, 'alt');
 	});
 
 	it('assert', function () {
-		ministyle.assertMiniStyle(toggle.main);
-		ministyle.assertMiniStyle(toggle.alt);
-		ministyle.assertMiniStyle(toggle.active);
+		ministyle.assertMiniStyle(style.main);
+		ministyle.assertMiniStyle(style.alt);
+		ministyle.assertMiniStyle(style.active);
 	});
 
 	it('enabled', function () {
-		assert.isTrue(toggle.enabled, 'enabled');
+		assert.isTrue(style.enabled, 'enabled');
 
-		var one = toggle.plain('abc');
-		toggle.enabled = false;
-		var two = toggle.plain('abc');
-		toggle.enabled = true;
-		var three = toggle.plain('abc');
+		var one = style.plain('abc');
+		style.enabled = false;
+		var two = style.plain('abc');
+		style.enabled = true;
+		var three = style.plain('abc');
 
 		assert.strictEqual(one, '[plain|abc]', 'one');
 		assert.strictEqual(two, 'abc', 'two');
@@ -49,33 +56,33 @@ describe('toggle', function () {
 	});
 
 	it('swap', function () {
-		toggle.swap();
-		assert.notEqual(toggle.main, toggle.active, 'main');
-		assert.equal(toggle.alt, toggle.active, 'alt');
+		style.swap();
+		assert.notEqual(style.main, style.active, 'main');
+		assert.equal(style.alt, style.active, 'alt');
 	});
 
 	describe('bulk', function () {
-		styles.forEach(function (style) {
-			it('enable ' + style, function () {
-				assert.isTrue(toggle.enabled, 'enabled');
-				var one = toggle[style]('abc');
-				toggle.enabled = false;
-				var two = toggle[style]('abc');
-				toggle.enabled = true;
-				var three = toggle[style]('abc');
+		styles.forEach(function (name) {
+			it('enable ' + name, function () {
+				assert.isTrue(style.enabled, 'enabled');
+				var one = style[name]('abc');
+				style.enabled = false;
+				var two = style[name]('abc');
+				style.enabled = true;
+				var three = style[name]('abc');
 
 				assert.strictEqual(one, three, 'one/three');
 				assert.notStrictEqual(one, two, 'one/two');
 				assert.notStrictEqual(two, three, 'two/three');
 			});
 
-			it('swap ' + style, function () {
-				assert.isTrue(toggle.enabled, 'enabled');
-				var one = toggle[style]('xyz');
-				toggle.swap();
-				var two = toggle[style]('xyz');
-				toggle.swap();
-				var three = toggle[style]('xyz');
+			it('swap ' + name, function () {
+				assert.isTrue(style.enabled, 'enabled');
+				var one = style[name]('xyz');
+				style.swap();
+				var two = style[name]('xyz');
+				style.swap();
+				var three = style[name]('xyz');
 
 				assert.strictEqual(one, three, 'one/three');
 				assert.notStrictEqual(one, two, 'one/two');

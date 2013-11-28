@@ -1,6 +1,8 @@
 /*jshint -W098*/
 
 describe('stack', function () {
+	'use strict';
+
 	var helper = require('../helper');
 	var assert = helper.assert;
 
@@ -30,32 +32,37 @@ describe('stack', function () {
 		};
 	}
 
-	var stack;
+	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+	var style;
 
 	beforeEach(function () {
 		var one = getWrap(1);
 		var two = getWrap(2);
 		var three = getWrap(3);
-		stack = ministyle.stack([one, two, three]);
+		style = ministyle.stack([one, two, three]);
+		ministyle.assertMiniStyle(style);
 	});
 
 	after(function () {
-		stack = null;
+		style = null;
 	});
 
+	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 	it('defaults', function () {
-		assert.isTrue(stack.enabled, 'enabled');
-		assert.isArray(stack.stack, 'stack');
+		assert.isTrue(style.enabled, 'enabled');
+		assert.isArray(style.stack, 'stack');
 	});
 
 	it('enabled', function () {
-		assert.isTrue(stack.enabled, 'enabled');
+		assert.isTrue(style.enabled, 'enabled');
 
-		var one = stack.plain('abc');
-		stack.enabled = false;
-		var two = stack.plain('abc');
-		stack.enabled = true;
-		var three = stack.plain('abc');
+		var one = style.plain('abc');
+		style.enabled = false;
+		var two = style.plain('abc');
+		style.enabled = true;
+		var three = style.plain('abc');
 
 		assert.strictEqual(one, '[p:3:[p:2:[p:1:abc]]]', 'one');
 		assert.strictEqual(two, 'abc', 'two');
@@ -63,14 +70,14 @@ describe('stack', function () {
 	});
 
 	describe('bulk', function () {
-		styles.forEach(function (style) {
-			it('enable ' + style, function () {
-				assert.isTrue(stack.enabled, 'enabled');
-				var one = stack[style]('abc');
-				stack.enabled = false;
-				var two = stack[style]('abc');
-				stack.enabled = true;
-				var three = stack[style]('abc');
+		styles.forEach(function (name) {
+			it('enable ' + name, function () {
+				assert.isTrue(style.enabled, 'enabled');
+				var one = style[name]('abc');
+				style.enabled = false;
+				var two = style[name]('abc');
+				style.enabled = true;
+				var three = style[name]('abc');
 
 				assert.strictEqual(one, three, 'one/three');
 				assert.notStrictEqual(one, two, 'one/two');

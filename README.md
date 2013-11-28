@@ -6,6 +6,7 @@
 
 A pluggable output styler/coloriser interface to embed in (development) tools and reporters. Offers a standard interface for customisable styled text output. The minimalistic API allows for overwrites to suit any environment.
 
+Intend as companion to [miniwrite](https://github.com/Bartvds/miniwrite) (et al).
 
 ## API
 
