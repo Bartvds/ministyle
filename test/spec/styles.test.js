@@ -6,7 +6,7 @@ describe('styles', function () {
 	var helper = require('../helper');
 	var assert = helper.assert;
 
-	var ministyle = require('../../lib/ministyle');
+	var ministyle = require('../../lib');
 
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -14,31 +14,11 @@ describe('styles', function () {
 		'error',
 		'warning',
 		'success',
+		'signal',
 		'accent',
 		'muted',
 		'plain'
 	];
-
-	var apiFixed = {
-		plain: function (str) {
-			return String(str);
-		},
-		success: function (str) {
-			return String(str);
-		},
-		accent: function (str) {
-			return String(str);
-		},
-		warning: function (str) {
-			return String(str);
-		},
-		error: function (str) {
-			return String(str);
-		},
-		muted: function (str) {
-			return String(str);
-		}
-	};
 
 	var apiBad = {
 		plain: function () {

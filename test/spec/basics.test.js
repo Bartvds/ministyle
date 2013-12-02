@@ -4,7 +4,7 @@ describe('basics', function () {
 	var helper = require('../helper');
 	var assert = helper.assert;
 
-	var ministyle = require('../../lib/ministyle');
+	var ministyle = require('../../lib');
 
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -13,6 +13,7 @@ describe('basics', function () {
 		'warning',
 		'success',
 		'accent',
+		'signal',
 		'muted',
 		'plain'
 	];
@@ -25,6 +26,9 @@ describe('basics', function () {
 			return str;
 		},
 		accent: function (str) {
+			return str;
+		},
+		signal: function (str) {
 			return str;
 		},
 		warning: function (str) {
@@ -49,6 +53,7 @@ describe('basics', function () {
 	var apiMissing = [
 		'error',
 		'warning',
+		'signal',
 		'success',
 		'accent'
 	];
@@ -58,22 +63,22 @@ describe('basics', function () {
 	describe('styles', function () {
 		it('allStyles', function () {
 			var actual = ministyle.getStyleNames();
-			assert.deepEqual(actual, apiAll);
+			assert.sameMembers(actual, apiAll);
 		});
 	});
 
 	describe('checkMiniStyle', function () {
 		it('detects first correctly', function () {
 			var actual = ministyle.checkMiniStyle({});
-			assert.deepEqual(actual, apiAll);
+			assert.sameMembers(actual, apiAll);
 		});
 		it('detects some missing correctly', function () {
 			var actual = ministyle.checkMiniStyle(apiBad);
-			assert.deepEqual(actual, apiMissing);
+			assert.sameMembers(actual, apiMissing);
 		});
 		it('detects all correctly', function () {
 			var actual = ministyle.checkMiniStyle(apiFixed);
-			assert.deepEqual(actual, []);
+			assert.sameMembers(actual, []);
 		});
 	});
 

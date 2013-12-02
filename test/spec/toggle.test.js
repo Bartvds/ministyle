@@ -6,7 +6,7 @@ describe('toggle', function () {
 	var helper = require('../helper');
 	var assert = helper.assert;
 
-	var ministyle = require('../../lib/ministyle');
+	var ministyle = require('../../lib');
 	var styles = ministyle.getStyleNames();
 
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

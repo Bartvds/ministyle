@@ -28,6 +28,13 @@
 			"sentence": "               ",
 			"word": "     "
 		},
+		"signal": {
+			"array": "1,2,3",
+			"empty": "",
+			"null": "null",
+			"sentence": "one, two, three",
+			"word": "alpha"
+		},
 		"success": {
 			"array": "     ",
 			"empty": "",

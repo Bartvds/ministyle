@@ -6,7 +6,7 @@ describe('stack', function () {
 	var helper = require('../helper');
 	var assert = helper.assert;
 
-	var ministyle = require('../../lib/ministyle');
+	var ministyle = require('../../lib');
 	var styles = ministyle.getStyleNames();
 
 	function getWrap(num) {
@@ -19,6 +19,9 @@ describe('stack', function () {
 			},
 			accent: function (str) {
 				return '[a:' + num + ':' + str + ']';
+			},
+			signal: function (str) {
+				return '[s:' + num + ':' + str + ']';
 			},
 			warning: function (str) {
 				return '[w:' + num + ':' + str + ']';

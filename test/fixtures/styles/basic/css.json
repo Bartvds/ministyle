@@ -28,6 +28,13 @@
 			"sentence": "<span class=\"mw-plain\">one, two, three</span>",
 			"word": "<span class=\"mw-plain\">alpha</span>"
 		},
+		"signal": {
+			"array": "<span class=\"mw-signal\">1,2,3</span>",
+			"empty": "<span class=\"mw-signal\"></span>",
+			"null": "<span class=\"mw-signal\">null</span>",
+			"sentence": "<span class=\"mw-signal\">one, two, three</span>",
+			"word": "<span class=\"mw-signal\">alpha</span>"
+		},
 		"success": {
 			"array": "<span class=\"mw-success\">1,2,3</span>",
 			"empty": "<span class=\"mw-success\"></span>",

@@ -28,6 +28,13 @@
 			"sentence": "one, two, three",
 			"word": "alpha"
 		},
+		"signal": {
+			"array": "\u001b[35m1,2,3\u001b[39m",
+			"empty": "\u001b[35m\u001b[39m",
+			"null": "\u001b[35mnull\u001b[39m",
+			"sentence": "\u001b[35mone, two, three\u001b[39m",
+			"word": "\u001b[35malpha\u001b[39m"
+		},
 		"success": {
 			"array": "\u001b[32m1,2,3\u001b[39m",
 			"empty": "\u001b[32m\u001b[39m",

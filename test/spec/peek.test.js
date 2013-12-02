@@ -6,8 +6,8 @@ describe('peek', function () {
 	var helper = require('../helper');
 	var assert = helper.assert;
 
-	var ministyle = require('../../lib/ministyle');
-	var styles = ministyle.getStyleNames();
+	var ministyle = require('../../lib');
+	var styles = ministyle.getStyleMap();
 
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -76,7 +76,9 @@ describe('peek', function () {
 	});
 
 	describe('bulk', function () {
-		styles.forEach(function (name) {
+		Object.keys(styles).forEach(function (name) {
+			var short = styles[name];
+
 			it('enable ' + name, function () {
 				assert.isTrue(style.enabled, 'enabled');
 				var one = style[name]('abc');
@@ -129,8 +131,8 @@ describe('peek', function () {
 				console.log(nope);
 				console.log(check);
 				*/
-				assert.strictEqual(ori, '[' + name + '|xyz]', 'ori');
-				assert.strictEqual(main, '[' + name + '|xyz]', 'main');
+				assert.strictEqual(ori, '[' + short + '|xyz]', 'ori');
+				assert.strictEqual(main, '[' + short + '|xyz]', 'main');
 				assert.strictEqual(flip, '<' + name + ':z|y|x>', 'flip');
 				assert.strictEqual(ret, '<xyz>', 'ret');
 				assert.strictEqual(nope, 'xyz', 'nope');

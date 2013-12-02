@@ -22,11 +22,18 @@
 			"word": "<span style=\"color:grey\">alpha</span>"
 		},
 		"plain": {
-			"array": "<span style=\"color:black\">1,2,3</span>",
-			"empty": "<span style=\"color:black\"></span>",
-			"null": "<span style=\"color:black\">null</span>",
-			"sentence": "<span style=\"color:black\">one, two, three</span>",
-			"word": "<span style=\"color:black\">alpha</span>"
+			"array": "<span>1,2,3</span>",
+			"empty": "<span></span>",
+			"null": "<span>null</span>",
+			"sentence": "<span>one, two, three</span>",
+			"word": "<span>alpha</span>"
+		},
+		"signal": {
+			"array": "<span style=\"color:magenta\">1,2,3</span>",
+			"empty": "<span style=\"color:magenta\"></span>",
+			"null": "<span style=\"color:magenta\">null</span>",
+			"sentence": "<span style=\"color:magenta\">one, two, three</span>",
+			"word": "<span style=\"color:magenta\">alpha</span>"
 		},
 		"success": {
 			"array": "<span style=\"color:green\">1,2,3</span>",

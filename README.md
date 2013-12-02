@@ -19,6 +19,7 @@ var ms = ministyle.ansi();
 var str = ms.muted('ignorable grey');
 var str = ms.plain('plain main');
 var str = ms.accent('flashy cyan');
+var str = ms.signal('bright magenta');
 var str = ms.success('good green');
 var str = ms.warning('annoying yellow');
 var str = ms.error('bad red');
@@ -100,6 +101,9 @@ var obj = {
 	accent: function (str) {
 		return str;
 	},
+	signal: function (str) {
+		return str;
+	},
 	warning: function (str) {
 		return str;
 	},
@@ -139,6 +143,7 @@ $ npm install ministyle --save-dev
 
 ## History
 
+* 0.1.2 - Added signal colour, enabled strict mode, split in internal modules
 * 0.1.0 - Added tests, publishing to npm.
 * 0.0.1 - Extracted styling from [miniwrite](https://github.com/Bartvds/miniwrite).
 
