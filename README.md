@@ -134,7 +134,7 @@ var ms = ministyle.peek(ministyle.escapeHTML, ministyle.css());
 ## Installation
 
 ```shell
-$ npm install ministyle --save-dev
+$ npm install ministyle --save
 ```
 
 ## Future
