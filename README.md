@@ -143,6 +143,7 @@ $ npm install ministyle --save
 
 ## History
 
+* 0.1.4 - Update to fix npm's README
 * 0.1.2 - Added signal colour, enabled strict mode, split in internal modules
 * 0.1.0 - Added tests, publishing to npm.
 * 0.0.1 - Extracted styling from [miniwrite](https://github.com/Bartvds/miniwrite).
@@ -170,6 +171,3 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 Copyright (c) 2013 Bart van der Schoor
 
 Licensed under the MIT license.
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Bartvds/ministyle/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
