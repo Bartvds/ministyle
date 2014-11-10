@@ -139,16 +139,30 @@ Optionally escape content: `var ms = ministyle.html(true)`
 
 ## CSS
 
-Optionally use a custom prefix to namespace classes, and escape content: `var ms = ministyle.css('mine-', true)`
+Optionally use a custom prefix to namespace classes, and escape content: `var ms = ministyle.css('my-', true)`
 
 ````
-plain
-success
-accent
-signal
-warning
-error
-muted
+.my-plain {
+	color: black;
+}
+.my-success {
+	color: green;
+}
+.my-accent {
+	color: magenta;
+}
+.my-signal {
+	color: cyan;
+}
+.my-warning {
+	color: orange;
+}
+.my-error {
+	color: red;
+}
+.my-muted {
+	color: grey;
+}
 ````
 
 ## Installation
