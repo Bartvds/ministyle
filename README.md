@@ -142,7 +142,7 @@ Optionally escape content: `var ms = ministyle.html(true)`
 Optionally use a custom prefix to namespace classes, and escape content: 
 
 ````js
-var ms = ministyle.css('my-', true)`;
+var ms = ministyle.css('my-', true);
 ````
 
 Using this CSS. 
