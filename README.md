@@ -141,7 +141,7 @@ Optionally escape content: `var ms = ministyle.html(true)`
 
 Optionally use a custom prefix to namespace classes, and escape content: `var ms = ministyle.css('my-', true)`
 
-````
+````css
 .my-plain {
 	color: black;
 }
