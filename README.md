@@ -131,6 +131,26 @@ Safe html:
 var ms = ministyle.peek(ministyle.escapeHTML, ministyle.css());
 ````
 
+## Additional info
+
+## HTML
+
+Optionally escape content: `var ms = ministyle.html(true)`
+
+## CSS
+
+Optionally use a custom prefix to namespace classes, and escape content: `var ms = ministyle.css('mine-', true)`
+
+````
+plain
+success
+accent
+signal
+warning
+error
+muted
+````
+
 ## Installation
 
 ```shell
