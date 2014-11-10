@@ -139,7 +139,13 @@ Optionally escape content: `var ms = ministyle.html(true)`
 
 ## CSS
 
-Optionally use a custom prefix to namespace classes, and escape content: `var ms = ministyle.css('my-', true)`
+Optionally use a custom prefix to namespace classes, and escape content: 
+
+````js
+var ms = ministyle.css('my-', true)`;
+````
+
+Using this CSS. 
 
 ````css
 .my-plain {
@@ -162,6 +168,16 @@ Optionally use a custom prefix to namespace classes, and escape content: `var ms
 }
 .my-muted {
 	color: grey;
+}
+````
+
+Put it in a monospaced container:
+
+````css
+.diff {
+	font-family: monospace;
+	white-space: pre;
+	font-weight: bold;
 }
 ````
 
